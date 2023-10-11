@@ -11,12 +11,12 @@ import { BsArrowRight } from "react-icons/bs";
 import { Link } from "react-router-dom";
 import About from "../components/About/About";
 import ServiceList from "../components/Services/ServiceList";
+import DoctorList from "../components/Doctors/DoctorList";
 
 const Home = () => {
   return (
     <>
       {/* ---------------Hero Section------------------  */}
-
       <section className="hero__section pt-[60px] 2xl:h-[800px]">
         <div className="container">
           <div className="flex flex-col lg:flex-row gap-[90px] items-center justify-between">
@@ -78,8 +78,8 @@ const Home = () => {
           </div>
         </div>
       </section>
-
       {/* ---------------Hero Section end------------------  */}
+
       <section>
         <div className="container">
           <div className="lg:w-[470px] mx-auto">
@@ -176,7 +176,6 @@ const Home = () => {
           <ServiceList />
         </div>
       </section>
-
       {/* -----------------Service Section End---------------  */}
 
       {/* ----------------Feature Section---------------  */}
@@ -238,6 +237,25 @@ const Home = () => {
           </div>
         </div>
       </section>
+      {/* -------------Feature Section End---------------  */}
+
+      {/* -------------Our Great Doctors--------------  */}
+      <section>
+        <div className="container">
+          <div className="xl:w-[470px] mx-auto">
+            <h2 className="heading text-center">Our Great Doctors</h2>
+            <p className="text__para text-center">
+              World-class care for everyone. Our health System offers unmatched,
+              expert health care
+            </p>
+          </div>
+          <DoctorList />
+        </div>
+      </section>
+      {/* ------------------Our Great Doctor End---------------  */}
+
+      {/* -----------Faq Section--------------  */}
+      {/* -----------Faq Section End----------------  */}
     </>
   );
 };
