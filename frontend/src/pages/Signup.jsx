@@ -4,31 +4,30 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 
 const Signup = () => {
+  const [selectedFile, setSelectedFile] = useState(null);
+  const [previewURL, setPreviewURL] = useState("");
 
-  const [selectedFile,setSelectedFile]=useState(null);
-  const [previewURL,setPreviewURL]=useState("");
-
-  const [formData, setFormData] = useState({\
-    name:"",
+  const [formData, setFormData] = useState({
+    name: "",
     email: "",
     password: "",
-    photo:selectedFile,
-    gender:"",
-    role:"patient"
+    photo: selectedFile,
+    gender: "",
+    role: "patient",
   });
 
   const handleInputChange = (e) => {
     setFormData({ ...formData, [e.target.name]: [e.target.value] });
   };
 
-  const handleFileInputChange = async(e)=>{
-    const file=e.target.files[0];
-    // Later We will Use clodinary to upload image 
-  }
+  const handleFileInputChange = async (e) => {
+    const file = e.target.files[0];
+    // Later We will Use clodinary to upload image
+  };
 
-  const submitHandler= async(e)=>{
+  const submitHandler = async (e) => {
     e.preventDefault();
-  }
+  };
 
   return (
     <section className="px-5 xl:px-0">
@@ -91,7 +90,7 @@ const Signup = () => {
                   <select
                     name="role"
                     value={formData.role}
-                  onChange={handleInputChange}
+                    onChange={handleInputChange}
                     className="text-textColor font-semibold text-[15px] leading-7 px-4 py-3 focus:outline-none"
                   >
                     <option value="patient">Patient</option>
@@ -104,7 +103,7 @@ const Signup = () => {
                   <select
                     name="gender"
                     value={formData.gender}
-                  onChange={handleInputChange}
+                    onChange={handleInputChange}
                     className="text-textColor font-semibold text-[15px] leading-7 px-4 py-3 focus:outline-none"
                   >
                     <option value="">Select</option>
